@@ -1,0 +1,35 @@
+name: Execute curl command
+
+on:
+schedule:
+
+cron: '55 15 * * *' # 每天UTC时间零点执行
+jobs:
+curl:
+runs-on: ubuntu-latest
+
+steps:
+
+name: Checkout code
+uses: actions/checkout@v2
+
+name: Execute curl command
+run: |
+curl -X POST 'https://msmarket.msx.digitalyili.com/gateway/api/member/daily/sign' \
+-H 'Host: msmarket.msx.digitalyili.com' \
+-H 'Connection: keep-alive' \
+-H 'Content-Length: 2' \
+-H 'charset: utf-8' \
+-H 'User-Agent: Mozilla/5.0 (Linux; Android 10; 24030PN60C Build/UKQ1.230804.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36 XWEB/1160065 MMWEBSDK/20231202 MMWEBID/5713 MicroMessenger/8.0.47.2560(0x28002F36) WeChat/arm64 Weixin Android Tablet NetType/WIFI Language/zh_CN ABI/arm64 MiniProgramEnv/android' \
+-H 'access-token: tVGCQvyFgTlAEAMl8/5Cd/s7RhT+kyfMpEW1bO+p67HEGf9YI3Nqxs/KhNxRe2o91wuVyTRTBnA9toGgfeujCsx4R1jw6uPCYbVf0/rmDoA=' \
+-H 'Accept-Encoding: gzip,compress,br,deflate' \
+-H 'tenant-id: 1559474730809618433' \
+-H 'scene: 1005' \
+-H 'atv-page: ' \
+-H 'source-type: ' \
+-H 'register-source: ' \
+-H 'content-type: application/json' \
+-H 'forward-appid: ' \
+-H 'Referer: https://servicewechat.com/wx06af0ef532292cd3/404/page-frame.html' \
+--data '{}' \
+--compressed
