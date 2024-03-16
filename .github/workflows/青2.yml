@@ -3,7 +3,7 @@ name: Execute curl command
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天UTC时间零点执行
+    - cron: '58 15 * * *' # 每天UTC时间零点执行
 
 jobs:
   curl:
