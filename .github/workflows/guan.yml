@@ -3,7 +3,7 @@ name: guan
 
 on:
   schedule:
-    - cron: '31 2 * * *' # 每天UTC时间零点执行
+    - cron: '40 2 * * *' # 每天UTC时间零点执行
 
 jobs:
   curl:
