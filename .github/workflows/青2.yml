@@ -1,5 +1,5 @@
 
-name: Execute curl command
+name: 青2
 
 on:
   schedule:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Execute curl command
+      - name: 青2
         run: |
           curl -X POST 'https://htwkop.xiaojukeji.com/gateway?api=prado.play.common.facade.component&apiVersion=1.0.0&appKey=h5appbcd0af7461691c1e30bcd61098f&appVersion=15.4.0&mobileType=xiaomi&osType=2&osVersion=Android%2010&timestamp=1710412757195&ttid=h5&userRole=1&token=9dl_OouBMo4rAbTI3z0K_Zfiiov8aYcuToiQ6__JPxUkzDkOwzAMRNG7_JowSEmULN4mi7M0CpAgleG7B46rmea_laEEedJJEYYRJoxEZFfbbyaseU9ey-xaWhJGIVQYToBwOuZMpN61Ni_me1yE659biJXP6_u-LISrmm3CbXdNi6WWm3AnsFq1tVl7LwiPg30Suv0CAAD__w%3D%3D&userId=299067541550114&sign=efa6a274bdca71d42b125c59b5996d45992a32c6&wsgsig=dd03-%2Fu5dGz%2B93bQUki9pSPEj4RbFHiJshgTOpTarNJgCHiJtkc2qxIYk3v7c2CQtks9QPMeY2RQb2DXqsn5mT52W3RQd4bivmnHSSSAh347e4bphqi2ZSIPWNR7f1C5' \
           -H 'Host: htwkop.xiaojukeji.com' \
