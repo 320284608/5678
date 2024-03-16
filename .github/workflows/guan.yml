@@ -1,33 +1,34 @@
+
 name: Execute curl command
 
 on:
-schedule:
-- cron: '0 0 * * *' # 每天UTC时间零点执行
+  schedule:
+    - cron: '0 0 * * *' # 每天UTC时间零点执行
 
 jobs:
-curl:
-runs-on: ubuntu-latest
+  curl:
+    runs-on: ubuntu-latest
 
-steps:
-- name: Checkout code
-uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-- name: Execute curl command
-run: |
-curl -X GET 'https://nb.quanqiuwa.com/api/integraldata/app/check-in/integral/946' \
--H 'Host: nb.quanqiuwa.com' \
--H 'Connection: keep-alive' \
--H 'charset: utf-8' \
--H 'channelno: 4TU6AVOEVQ' \
--H 'x-qqw-channel-no: 4TU6AVOEVQ' \
--H 'User-Agent: Mozilla/5.0 (Linux; Android 14; V2243A Build/UKQ1.231003.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/118.0.0.0 Mobile Safari/537.36 MMWEBID/5713 MicroMessenger/8.0.47.2560(0x28002F30) WeChat/arm64 Weixin Android Tablet NetType/4G Language/zh_CN ABI/arm64 MiniProgramEnv/android' \
--H 'x-qqw-miniapp-testline: false' \
--H 'Accept-Encoding: gzip,compress,br,deflate' \
--H 'x-qqw-client-version: WxMiniApp-4TU6AVOEVQ-1.4.899' \
--H 'x-qqw-request-sign: fTvT0ZGNw103a+2HE2Olzcn3PTycH1vlDByCbL46Jsc=' \
--H 'x-qqw-request-nonce: neR8Q4HA4P' \
--H 'x-qqw-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJBUFAiLCJpc3MiOiJTZXJ2aWNlIiwiZXhwIjoxNzEyMTY5NTE1LCJpYXQiOjE3MDk1Nzc1MTUsImN1cnJlbnRfdXNlciI6IntcImNoYW5uZWxOb1wiOlwiNFRVNkFWT0VWUVwiLFwiY3VzdG9tZXJJZFwiOjMwNzU3NzcsXCJjdXN0b21lck5vXCI6XCIwOTQyc2M1QWJnTlZcIixcImxvZ2luQ2hhbm5lbFwiOlwiV0VDSEFUXCIsXCJvcGVuSWRcIjpcIm9PbG5VNUxZbTBCRUViUkU4NS0zVDN1M3MzdU1cIixcInNlc3Npb25LZXlcIjpcIllOZmNITVkrbExVTVd5dUNsZkRwV3c9PVwiLFwidXNlcklkXCI6MTI4NDYxNTV9In0.yCV61UhoZJhq4sPG3qCEEyv87_wnMSZDcDj4vret-70' \
--H 'content-type: application/json' \
--H 'x-qqw-miniapp-prono: 29arrive' \
--H 'Referer: https://servicewechat.com/wxa7a8c8300c564800/155/page-frame.html' \
---compressed
+      - name: Execute curl command
+        run: |
+          curl -X GET 'https://nb.quanqiuwa.com/api/integraldata/app/check-in/integral/946' \
+          -H 'Host: nb.quanqiuwa.com' \
+          -H 'Connection: keep-alive' \
+          -H 'charset: utf-8' \
+          -H 'channelno: 4TU6AVOEVQ' \
+          -H 'x-qqw-channel-no: 4TU6AVOEVQ' \
+          -H 'User-Agent: Mozilla/5.0 (Linux; Android 14; V2243A Build/UKQ1.231003.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/118.0.0.0 Mobile Safari/537.36 MMWEBID/5713 MicroMessenger/8.0.47.2560(0x28002F30) WeChat/arm64 Weixin Android Tablet NetType/4G Language/zh_CN ABI/arm64 MiniProgramEnv/android' \
+          -H 'x-qqw-miniapp-testline: false' \
+          -H 'Accept-Encoding: gzip,compress,br,deflate' \
+          -H 'x-qqw-client-version: WxMiniApp-4TU6AVOEVQ-1.4.899' \
+          -H 'x-qqw-request-sign: fTvT0ZGNw103a+2HE2Olzcn3PTycH1vlDByCbL46Jsc=' \
+          -H 'x-qqw-request-nonce: neR8Q4HA4P' \
+          -H 'x-qqw-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJBUFAiLCJpc3MiOiJTZXJ2aWNlIiwiZXhwIjoxNzEyMTY5NTE1LCJpYXQiOjE3MDk1Nzc1MTUsImN1cnJlbnRfdXNlciI6IntcImNoYW5uZWxOb1wiOlwiNFRVNkFWT0VWUVwiLFwiY3VzdG9tZXJJZFwiOjMwNzU3NzcsXCJjdXN0b21lck5vXCI6XCIwOTQyc2M1QWJnTlZcIixcImxvZ2luQ2hhbm5lbFwiOlwiV0VDSEFUXCIsXCJvcGVuSWRcIjpcIm9PbG5VNUxZbTBCRUViUkU4NS0zVDN1M3MzdU1cIixcInNlc3Npb25LZXlcIjpcIllOZmNITVkrbExVTVd5dUNsZkRwV3c9PVwiLFwidXNlcklkXCI6MTI4NDYxNTV9In0.yCV61UhoZJhq4sPG3qCEEyv87_wnMSZDcDj4vret-70' \
+          -H 'content-type: application/json' \
+          -H 'x-qqw-miniapp-prono: 29arrive' \
+          -H 'Referer: https://servicewechat.com/wxa7a8c8300c564800/155/page-frame.html'  \
+          --compressed
