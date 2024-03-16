@@ -1,9 +1,9 @@
 
-name: Execute curl command
+name: guan
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天UTC时间零点执行
+    - cron: '31 2 * * *' # 每天UTC时间零点执行
 
 jobs:
   curl:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Execute curl command
+      - name: guan
         run: |
           curl -X GET 'https://nb.quanqiuwa.com/api/integraldata/app/check-in/integral/946' \
           -H 'Host: nb.quanqiuwa.com' \
