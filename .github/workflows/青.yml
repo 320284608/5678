@@ -1,0 +1,32 @@
+name: Execute curl command
+
+on:
+  schedule:
+    - cron: '58 15 * * *' # 每天UTC时间零点执行
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Execute curl command
+        run: |
+          curl -X POST 'https://htwkop.xiaojukeji.com/gateway?api=prado.play.common.facade.component&apiVersion=1.0.0&appKey=h5appbcd0af7461691c1e30bcd61098f&appVersion=15.2.0&mobileType=Xiaomi&osType=2&osVersion=Android%2014&timestamp=1709079114710&ttid=didi_h5&userRole=1&token=rfwMmNEZaZCJgRhnJWDUA0bUuxJqBDu2lmutYlFyE6wkzDlqxEAQhtG7fHEh_upWL1W38SIvSRtsHAndfRgUveydLJHUTZswlpNurELWJoWxKumjRZlzRJerGGsnZaxGgvFy80qWCPXhsxfFXofxTrobB3ny9_P_-3aQTVJcxsczVmiERjU-SXx62RXdp2N83e83qesRAAD__w%3D%3D&userId=299067186209437&sign=565f9e23c7c3e96db203587baae6fbbd58646c92&wsgsig=dd03-yhk84YZQ5hv63cH%2BtbAy0SYzNa448WBLrWZQcMrYNa433slEjC9z0wOP8rv33cwNXGxjES5Q8%2Fm2LG%2FbtsUycLPx6kRD4DOJtsVQGPw%2F7hv11cr5tgVTFPqTJUq' \
+           -H 'Host: htwkop.xiaojukeji.com' \
+           -H 'Connection: keep-alive' \
+           -H 'Content-Length: 463' \
+           -H 'secdd-authentication: b28f46dc35dbdaa67f0d6c186bb93215a8750b714625093fa3b081f2e3f8f70fbc1aed614aa69aeb79a0b584f15be6b8fc630aed8d01000001000000' \
+           -H 'charset: utf-8' \
+           -H 'User-Agent: Mozilla/5.0 (Linux; Android 14; MI 9 Build/UKQ1.230804.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36 XWEB/1160065 MMWEBSDK/20231202 MMWEBID/7437 MicroMessenger/8.0.47.2560(0x28002F30) WeChat/arm64 Weixin NetType/4G Language/zh_CN ABI/arm64 MiniProgramEnv/android' \
+           -H 'xpsid: ad1d6caa758c4eecabf6eac69be93b3e' \
+           -H 'content-type: application/json' \
+           -H 'cityid: 2' \
+           -H 'Accept-Encoding: gzip,compress,br,deflate' \
+           -H 'secdd-challenge: 3|v1.1.0||||||' \
+           -H 'xpsid-root: ad1d6caa758c4eecabf6eac69be93b3e' \
+           -H 'Referer: https://servicewechat.com/wxaf35009675aa0b2a/817/page-frame.html' \
+           --data '%7B%22cityId%22%3A2%2C%22methodName%22%3A%22signIn%22%2C%22serviceCode%22%3A%22signInComponentService%22%2C%22serviceType%22%3A%22SIMPLE%22%2C%22entryFlag%22%3A%22APP_LETS%22%2C%22classifyCode%22%3A%22SIGN%22%2C%22scene%22%3A%22LLC_WELFARE_CENTER%22%2C%22bizId%22%3A363%2C%22channelId%22%3A3%2C%22miniappversion%22%3A%2215.2.0%22%2C%22klat%22%3A22.59929958767361%2C%22klnt%22%3A113.86693603515624%2C%22accuracy%22%3A5.586074352264404%2C%22hwId%22%3A%2210000%22%7D' \
+           --compressed
