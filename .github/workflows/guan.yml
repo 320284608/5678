@@ -1,20 +1,20 @@
-name: Daily Curl Job
+name: Execute curl command
 
 on:
 schedule:
-- cron: '0 0 * * *' # 每天UTC协调世界时时间的午夜
+- cron: '0 0 * * *' # 每天UTC时间零点执行
 
 jobs:
-curl_job:
+curl:
 runs-on: ubuntu-latest
 
 steps:
 - name: Checkout code
 uses: actions/checkout@v2
 
-- name: Run curl command
+- name: Execute curl command
 run: |
-curl -sS GET 'https://nb.quanqiuwa.com/api/integraldata/app/check-in/integral/946' \
+curl -X GET 'https://nb.quanqiuwa.com/api/integraldata/app/check-in/integral/946' \
 -H 'Host: nb.quanqiuwa.com' \
 -H 'Connection: keep-alive' \
 -H 'charset: utf-8' \
@@ -30,13 +30,4 @@ curl -sS GET 'https://nb.quanqiuwa.com/api/integraldata/app/check-in/integral/94
 -H 'content-type: application/json' \
 -H 'x-qqw-miniapp-prono: 29arrive' \
 -H 'Referer: https://servicewechat.com/wxa7a8c8300c564800/155/page-frame.html' \
---compressed > response.json
-
-- name: Check response
-run: |
-if [ $(cat response.json | jq '.message') = "API rate limit exceeded" ]; then
-echo "API rate limit exceeded"
-exit 1
-else
-echo "Curl command executed successfully"
-fi
+--compressed
