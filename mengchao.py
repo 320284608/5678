@@ -16,7 +16,7 @@ headers = {
     'platform': 'android',
     'token': 'It/opdR/CWIuBQQdkZY7jz+NYYgSQ6smSHeeRfskyLdwHI+fWLs6G6xA1cPyVKOOoG1KGeUc5L5kXV4W3OVUB/T3Q7Z77y5MulIUNNtgDuY5OR9MgcXMcsGEakPlBCxZv98Q0Uwb5uOJPhIXNiZ5B7EhT0rV26R+ihXW+0OSEe+RA9wnYhtZ/PNbjYWt1BAJY+IDx4aliTYIWKZLvFKUxFya2nO1S6GEdeWlYNKxvdKj9/kGuLmueG5Y2VQiPaWd',
     'system': 'Android 14',
-    't': current_timestamp,
+    't': str(current_timestamp),
     'size': '393,835',
     'model': 'MI 9',
     # Already added when you pass json=
