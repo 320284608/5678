@@ -1,0 +1,28 @@
+
+name: yili2
+
+on:
+  schedule:
+    - cron: '20 16 * * *' # 每天UTC时间零点执行
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: yili2
+        run: |
+          curl -X POST https://msmarket.msx.digitalyili.com/gateway/api/member/daily/sign \
+          -H 'content-type: application/json' \
+          -H 'Connection: keep-alive' \
+          -H 'Accept-Encoding: gzip,compress,br,deflate' \
+          -H 'tenant-id: 1559474730809618433' \
+          -H 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.48(0x18003029) NetType/WIFI Language/zh_CN' \
+          -H 'access-token: WoU54SeXL7/baEuPCMLKiF9Sko0E/r89JEVtZO8rw0yG21CG8ibSG+LE9kEtw3Md6fUb19KPAuLjhu8cdahOP7F91Z0f8TRjS9fqWQK44PY=' \
+          -H 'Host: msmarket.msx.digitalyili.com' \
+          -H 'Referer: https://servicewechat.com/wx06af0ef532292cd3/419/page-frame.html' \
+          --data '{}' \
+          --compressed
