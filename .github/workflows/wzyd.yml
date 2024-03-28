@@ -1,0 +1,57 @@
+name: wzyd
+
+on:
+  schedule:
+    - cron: '55 14 * * *' # 每天UTC时间零点执行
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: wzyd
+        run: |
+          curl -X POST 'https://kohcamp.qq.com/operation/action/newsignin' \
+          -H 'Host: kohcamp.qq.com' \
+          -H 'Connection: keep-alive' \
+          -H 'Content-Length: 70' \
+          -H 'h5Get: 1' \
+          -H 'serverId: 3073' \
+          -H 'X-Client-Proto: https' \
+          -H 'Accept-Encrypt: ' \
+          -H 'userId: 464139841' \
+          -H 'openid: oFhrws43OwVrveiaWlGUYlhcV-CM' \
+          -H 'algorithm: v2' \
+          -H 'msdkEncodeParam: AA5A1EBE5E28E1465539A2CC64CE0AA690CCCF5B4D02F8B847A22025F029C287070CC129638D3872862345A8833AFD1A7217FE0AB14B39AA2DE7D5DA272D4EE4E13C1D98645030C67DA38A96EDE5285D2D50B1F0FD4D0E7F6D90DCEFD1818227952A6E5EB306AC4B75AE2132C0AF4AF31C39846515E6388994FDD023AEE25BAC2EC3EB2881F98CE427CEA55DECA06D70AF27E28AE432405A66C1D850655453C95AE1C0F61A4AC9B2902785EB6197380D0385680C4753833FAA482ECB56400C5BF6A893120838C31A1DC5243C56738FBB53CEC66A24D3B633293871FA8A8F1755B9E0AA274AC4B03F8E31B7932BC6BB8E9E3269570FACB4392E3F8EB17B5923AFA7A842FB8EB2FB2EEA1881F0B3F7F7A40FD0F03EE875EEB435003109B804C2DFA6057E849361E1DE80AAFEBD6FAB5D2750B2A30C3B1D72B72E390C24EC976DAFAE47772B25EE38C8B0F5B6DBAE85A82B6FA27D126B58BAE9' \
+          -H 'campRoleId: 1612100336' \
+          -H 'sig: 4b6f827297f1d4abb9e10e2073d8465a' \
+          -H 'encode: 2' \
+          -H 'roleId: 1612100336' \
+          -H 'areaId: 3' \
+          -H 'source: smoba_zhushou' \
+          -H 'User-Agent: Mozilla/5.0 (Linux; Android 14; 2201122C Build/UKQ1.231003.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/118.0.0.0 Mobile Safari/537.36;GameHelper; smobagamehelper; Brand: Xiaomi 2201122C$' \
+          -H 'Content-Type: application/json' \
+          -H 'msdkToken: UYxDWzjx' \
+          -H 'Accept: application/json, text/plain, */*' \
+          -H 'noencrypt: 1' \
+          -H 'timestamp: 1711598864239' \
+          -H 'cClientVersionName: 8.92.0313' \
+          -H 'gameId: 20001' \
+          -H 'cSystem: android' \
+          -H 'gameOpenid: owanlsnxepdpEMx2PmsNJjW-jW5Q' \
+          -H 'appid: wxf4b1e8a3e9aaf978' \
+          -H 'token: 32ahM6Ud' \
+          -H 'version: 3.1.96a' \
+          -H 'Origin: https://camp.qq.com' \
+          -H 'X-Requested-With: com.tencent.gamehelper.smoba' \
+          -H 'Sec-Fetch-Site: same-site' \
+          -H 'Sec-Fetch-Mode: cors' \
+          -H 'Sec-Fetch-Dest: empty' \
+          -H 'Referer: https://camp.qq.com/' \
+          -H 'Accept-Encoding: gzip, deflate' \
+          -H 'Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7' \
+          --data '{"cSystem":"android","h5Get":1,"gameId":"20001","roleId":"1612100336"}' \
+          --compressed
