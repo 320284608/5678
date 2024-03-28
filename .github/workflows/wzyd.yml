@@ -2,7 +2,7 @@ name: wzyd
 
 on:
   schedule:
-    - cron: '55 14 * * *' # 每天UTC时间零点执行
+    - cron: '5 4 * * *' # 每天UTC时间零点执行
 
 jobs:
   curl:
