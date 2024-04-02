@@ -1,0 +1,17 @@
+name: yl
+
+on:
+  schedule:
+    - cron: '25 16 * * *' # 每天UTC时间零点执行
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: yl
+        run: |
+          curl -k -X POST -H "register-source: " -H "Referer: https://servicewechat.com/wx06af0ef532292cd3/428/page-frame.html" -H "Accept-Encoding: gzip,compress,br,deflate" -H "Connection: keep-alive" -H "access-token: zUduCnk15307dujCJYdEpMHGTXgcKx4HWH+eSzWB0AD/A/Hbm2MVQHjTklSlvFw4I0WqvTRLkj/foIlEpraCr78MI+fvvGAYl4kOwRVHdhY=" -H "Content-Length: 2" -H "forward-appid: " -H "atv-page: " -H "tenant-id: 1559474730809618433" -H "Host: msmarket.msx.digitalyili.com" -H "content-type: application/json" -H "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.49(0x18003112) NetType/WIFI Language/zh_CN" -H "scene: 1089" -H "source-type: " -d "{}" "https://msmarket.msx.digitalyili.com/gateway/api/member/daily/sign" --compressed
