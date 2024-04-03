@@ -2,7 +2,7 @@ name: yl
 
 on:
   schedule:
-    - cron: '25 16 * * *' # 每天UTC时间零点执行
+    - cron: '55 07 * * *' # 每天UTC时间零点执行
 
 jobs:
   curl:
