@@ -1,0 +1,25 @@
+name: Curl Action
+
+on: [push]
+
+jobs:
+  curl_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Curl Request
+      run: |
+        response=$(curl -s https://api.example.com)
+        echo "$response" > response.txt
+    - name: Parse Response
+      run: |
+        body=$(cat response.txt)
+        parsed_body=$(echo "$body" | jq '.data')
+        echo "Parsed response: $parsed_body"
+    - name: Send to WXPUSHER API
+      run: |
+        wxpusher_api_key="YOUR_WXPUSHER_API_KEY"
+        wxpusher_app_token="YOUR_WXPUSHER_APP_TOKEN"
+        wxpusher_uid="YOUR_WXPUSHER_UID"
+        message="Parsed response: $parsed_body"
+        curl -X POST -d "{\"appToken\": \"$wxpusher_app_token\", \"content\": \"$message\", \"contentType\": 1, \"uids\": [\"$wxpusher_uid\"]}" -H "Content-Type: application/json" "http://wxpusher.zjiecode.com/api/send/message"
