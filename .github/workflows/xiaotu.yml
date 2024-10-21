@@ -1,0 +1,27 @@
+name: xiaotu
+
+on:
+  schedule:
+    - cron: '16,18,20,22,23,24,26,28,30,32 6 * * *' # 每天UTC时间零点执行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: xaiotu
+        run: |
+          curl -X POST 'https://htwkop.xiaojukeji.com/gateway?api=prado.play.common.facade.component&apiVersion=1.0.0&appKey=h5appbcd0af7461691c1e30bcd61098f&appVersion=16.9.0&mobileType=Xiaomi&osType=2&osVersion=Android%2013&timestamp=1729134785517&ttid=h5&userRole=1&token=JCzSld5vs8fhOlshXsd4OBujLz0i5_bGoWmqSYXRx3AkzDnKw1AMReG9nFoY6c3Sbv7BGZoXSEhlvPfguLq3OHwbUwnyoosiTCNMmInIVe24mbBePY3RvalpEmYhVJiVAOHnnF8iuWvrNlpSL7kL_19uJTZej_fzbyWqqtkuXA43ueVSj_JKYMNSUW82DOF2sndC908AAAD__w%3D%3D&userId=299067186209437&sign=680ef287a00fe4e11517a033e0234f3fd2eeccf2' \
+           -H 'Host: htwkop.xiaojukeji.com' \
+           -H 'Connection: keep-alive' \
+           -H 'Content-Length: 449' \
+           -H 'charset: utf-8' \
+           -H 'User-Agent: Mozilla/5.0 (Linux; Android 13; MI 9 Build/TKQ1.221114.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.188 Mobile Safari/537.36 XWEB/1260117 MMWEBSDK/20240301 MMWEBID/7437 MicroMessenger/8.0.48.2580(0x28003035) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64 MiniProgramEnv/android' \
+           -H 'xpsid: c66618cfddec4501b9cef85726cb01bc' \
+           -H 'content-type: application/json' \
+           -H 'cityid: 2' \
+           -H 'Accept-Encoding: gzip,compress,br,deflate' \
+           -H 'xpsid-root: c66618cfddec4501b9cef85726cb01bc' \
+           -H 'Referer: https://servicewechat.com/wx9e9b87595c41dbb7/482/page-frame.html' \
+           --data '%7B%22cityId%22%3A2%2C%22methodName%22%3A%22signIn%22%2C%22serviceCode%22%3A%22signInComponentService%22%2C%22serviceType%22%3A%22SIMPLE%22%2C%22entryFlag%22%3A%22APP_LETS%22%2C%22classifyCode%22%3A%22SIGN%22%2C%22scene%22%3A%22LLC_WELFARE_CENTER%22%2C%22bizId%22%3A363%2C%22channelId%22%3A3%2C%22miniappversion%22%3A%2216.9.0%22%2C%22klat%22%3A22.597457139756944%2C%22klnt%22%3A113.86379801432291%2C%22accuracy%22%3A15%2C%22hwId%22%3A%2210000%22%7D' \
+           --compressed
