@@ -2,7 +2,7 @@ name: Run 小兔
 on:
   schedule:
     # 每天 11:01 UTC 时间运行
-    - cron: '1 11 * * *'  # UTC 时间
+    - cron: '1 3 * * *'  # UTC 时间
   workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
