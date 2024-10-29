@@ -1,0 +1,29 @@
+name: Run xiaotu
+
+on:
+  schedule:
+    - cron: '29,30,32,35,37,39,41,43,45,47 1 * * *' # 每天UTC时间零点执行
+  push:
+    branches:
+      - main
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run script
+        run: python xiaotu.py  # 替换为你的Python脚本文件名
