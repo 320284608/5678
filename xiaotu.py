@@ -16,7 +16,7 @@ headers = {
 }
 
 # 替换timestamp为当前时间戳
-data = f"uid=3673043&timestamp={current_timestamp}&token=8B9C6C0FBBFD98386482C5F9C1948103971EC622"
-
+#data = f"uid=3673043&timestamp={current_timestamp}&token=8B9C6C0FBBFD98386482C5F9C1948103971EC622"
+data = """uid=3673043&timestamp=1725671456&token=8B9C6C0FBBFD98386482C5F9C1948103971EC622"""
 res = requests.post(url, headers=headers, data=data)
 print(res.text)
