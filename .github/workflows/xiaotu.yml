@@ -24,11 +24,11 @@ jobs:
           pip install requests
 
       - name: Run script
-        run: python 小兔.py  # 替换为你的Python脚本文件名
+        run: python xiaotu.py  # 替换为你的Python脚本文件名
 
       - name: Wait for a minute and run again
         run: |
           for i in {1..9}; do  # 运行9次（总共10次，包括第一次）
             sleep 60  # 等待60秒
-            python 小兔.py  # 再次运行你的Python脚本
+            python xiaotu.py  # 再次运行你的Python脚本
           done
